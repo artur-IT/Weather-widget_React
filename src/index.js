@@ -15,18 +15,21 @@ class Weather extends Component {
     country: 0,
   };
 
+  // INITIALIZE getWeather() function and CLEAR INPUT FIELD
   handleButton = () => {
     const city = document.getElementById("search_city");
     this.state.city ? this.getWeather() : alert("wpisz miasto");
     city.value = "";
   };
 
+  // GET CITY from INPUT FIELD
   getCity = () => {
     const city = document.getElementById("search_city");
     this.setState({ city: city.value });
     city.value !== 0 && this.setState({ active: false });
   };
 
+  // GET WEATHER DATA from OPENWEATHERMAP
   getWeather = () => {
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${this.state.city},lang=pl&units=metric&appid=1b75f47063fbd0b335b1b1ddb0ee4435`;
     fetch(url)
