@@ -17,9 +17,8 @@ class Weather extends Component {
 
   // INITIALIZE getWeather() function and CLEAR INPUT FIELD
   handleButton = () => {
-    const city = document.getElementById("search_city");
-    this.state.city ? this.getWeather() : alert("wpisz miasto");
-    city.value = "";
+    this.state.city ? this.getWeather() : alert("enter the city");
+    document.getElementById("search_city").value = "";
   };
 
   // GET CITY from INPUT FIELD
@@ -36,15 +35,12 @@ class Weather extends Component {
       .then((response) => response.json())
       .then((results) => {
         if (results.cod === "404") {
-          results.cod = "404" && alert("nie ma takiego miasta!");
+          results.cod = "404" && alert("bad city name!");
           this.setState({ active: false });
         } else {
-          const wTime = results.dt + 7200;
-          const sunrTime = results.sys.sunrise;
-          const sunsTime = results.sys.sunset;
-          const weatherTime = new Date(wTime * 1000).toGMTString();
-          const sunriseTime = new Date(sunrTime * 1000).toLocaleTimeString();
-          const sunsetTime = new Date(sunsTime * 1000).toLocaleTimeString();
+          const weatherTime = new Date(results.dt * 1000).toLocaleString();
+          const sunriseTime = new Date(results.sys.sunrise * 1000).toLocaleTimeString();
+          const sunsetTime = new Date(results.sys.sunset * 1000).toLocaleTimeString();
           this.setState({
             active: true,
             hour: weatherTime,
@@ -65,9 +61,11 @@ class Weather extends Component {
     const { hour, city, clouds, temp, wind, sunrise, sunset, country } = this.state;
     return (
       <>
-        <h2>Simple Weather (React)</h2>
-        <input type="text" placeholder="wpisz miasto" id="search_city" onChange={this.getCity} />
-        <button onClick={this.handleButton}>Szukaj</button>
+        <h2>
+          Simple Weather <sup>[React]</sup>
+        </h2>
+        <input type="text" placeholder="enter the city" id="search_city" onChange={this.getCity} />
+        <button onClick={this.handleButton}>Search</button>
         {this.state.active === true ? (
           <Results hour={hour} city={city} clouds={clouds} temp={temp} wind={wind} sunrise={sunrise} sunset={sunset} country={country} />
         ) : null}

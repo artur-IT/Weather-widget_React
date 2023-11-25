@@ -1,27 +1,27 @@
 import "./results.css";
 // SHOW RESULTS
-function Results(props) {
+function Results({ city, clouds, temp, wind, sunrise, sunset, country, hour }) {
   return (
     <ul>
       <li>
         <h3>
-          Prognoza dla miasta <span>{props.city}</span>
+          Forecast for city: <span>{city}</span>
         </h3>
       </li>
       <li>
-        Zachmurzenie: <span> {props.clouds} %</span>
+        Clouds: <span> {clouds} %</span>
       </li>
       <li>
-        Temperatura: <span>{props.temp} *C</span>
+        Temperature: <span>{temp} *C</span>
       </li>
       <li>
-        Wiatr: <span>{props.wind} km/h</span>
+        Wind: <span>{wind} km/h</span>
       </li>
       <li>
-        Wschód słońca: <span>{props.sunrise}</span>
+        Sunrise: <span>{sunrise}</span>
       </li>
       <li>
-        Zachód słońca: <span>{props.sunset}</span>
+        Sunset: <span>{sunset}</span>
       </li>
       <li>
         <a
@@ -29,13 +29,13 @@ function Results(props) {
           target="_blank"
           rel="noreferrer"
         >
-          Kraj:
+          Country:
         </a>
-        <span> {props.country}</span>
+        <span> {country}</span>
       </li>
       <li>
         <h5>
-          Odczyt z godziny <span>{props.hour}</span>
+          Time reading <span>{hour}</span>
         </h5>
       </li>
     </ul>

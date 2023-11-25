@@ -1,19 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+
 body {
   font-size: 1.5rem;
-  background-color: #456;
+  background-color: #000;
   background-image: url("background.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 #root {
-  margin: 50px auto;
+  margin: 50px 30% 0 45%;
   text-align: center;
 }
 
 h2 {
+  margin: 10px 0;
   color: #000;
+}
+h3 {
+  margin: 10px 0;
 }
 
 input,
@@ -21,7 +27,8 @@ button {
   margin: 20px 5px;
   font-size: 1.2rem;
   padding: 7px 20px;
-  border: 2px solid black;
+  background-color: #fff;
+  border: 1px solid black;
 }
 
 button:hover {
@@ -42,12 +49,14 @@ ul:hover {
 }
 
 ul {
-  background-color: #456;
+  width: 450px;
   margin: 5px auto;
-  padding: 5px 20px;
+  padding: 1px 20px;
   list-style: none;
-  border-radius: 30px;
+  border-radius: 0px;
   text-align: left;
+  background-color: #015b7f;
+  opacity: 0.7;
 }
 li {
   margin: 3px 0;
@@ -57,5 +66,9 @@ a {
   color: greenyellow;
 }
 span {
+  color: white;
+}
+sup {
+  font-size: 1.1rem;
   color: white;
 }
