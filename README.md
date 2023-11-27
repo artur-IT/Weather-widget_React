@@ -1,4 +1,4 @@
-![screen](/screen.png)
+![screen](/src/screen.png)
 
 # Weather widget
 
@@ -28,7 +28,7 @@ Simple widget with weather from all city world reate in JS + React.
 - Free API from Open Weather Map
 - Responsive for mobile
 
-![screen](/get_weather.png)
+![screen](/src/get_weather.png)
 
 &nbsp;
 
