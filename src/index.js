@@ -1,4 +1,4 @@
-import React, { Component, createElement } from "react";
+import React, { Component } from "react";
 import ReactDOM from "react-dom/client";
 import Results from "./Results";
 
@@ -15,14 +15,15 @@ class Weather extends Component {
     country: 0,
   };
 
+  // INPUT FIELD - empty or wrong city handler
   inputHandler = () => {
     const error = document.createElement("p");
     error.textContent = "Bad city name, try again!";
-    document.getElementById("root").appendChild(error);
+    root.appendChild(error);
     setTimeout(() => (error.textContent = ""), 3000);
   };
 
-  // INITIALIZE getWeather() function and CLEAR INPUT FIELD
+  // INITIALIZE getWeather() and CLEAR INPUT FIELD
   handleButton = () => {
     this.state.city ? this.getWeather() : this.inputHandler();
     document.getElementById("search_city").value = "";
