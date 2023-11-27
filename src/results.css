@@ -1,32 +1,33 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
 
 body {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   background-color: #000;
-  background-image: url("background.jpg");
+  background-image: url("2.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   font-family: "Poppins", sans-serif;
 }
 
 #root {
-  margin: 50px 30% 0 45%;
+  margin: 6% 28% 0 37%;
   text-align: center;
 }
 
 h2 {
   margin: 10px 0;
-  color: #000;
-}
-h3 {
-  margin: 10px 0;
+  color: #fff;
 }
 
 input,
 button {
   margin: 20px 5px;
   font-size: 1.2rem;
-  padding: 7px 20px;
+  padding: 7px 10px;
   background-color: #fff;
   border: 1px solid black;
 }
@@ -43,19 +44,15 @@ div {
   margin: 10px 5px;
   color: lightgreen;
 }
-ul:hover {
-  box-shadow: 0px 0px 10px 5px black;
-  transition: 0.3s;
-}
 
 ul {
-  width: 450px;
+  width: 358px;
   margin: 5px auto;
-  padding: 1px 20px;
+  padding: 15px 20px;
   list-style: none;
   border-radius: 0px;
   text-align: left;
-  background-color: #015b7f;
+  background-color: #000000;
   opacity: 0.7;
 }
 li {
@@ -70,5 +67,50 @@ span {
 }
 sup {
   font-size: 1.1rem;
-  color: white;
+  color: #999;
+}
+
+@media (max-width: 500px) and (orientation: portrait) {
+  #root {
+    width: 95vw;
+    height: 89vh;
+    margin: 50px auto;
+  }
+
+  body {
+    font-size: 1.1rem;
+    background-color: #000;
+    background-image: url("2.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+
+  input,
+  button {
+    margin: 20px 5px;
+    font-size: 1rem;
+    padding: 5px 10px;
+  }
+
+  ul {
+    width: 300px;
+  }
+}
+
+@media (max-height: 500px) and (orientation: landscape) {
+  #root {
+    margin: 4% 28% 0 34%;
+  }
+  body {
+    font-size: 1rem;
+  }
+  input,
+  button {
+    margin: 10px 5px;
+    font-size: 1.1rem;
+    padding: 5px 10px;
+  }
+  ul {
+    width: 300px;
+  }
 }

@@ -5,23 +5,23 @@ function Results({ city, clouds, temp, wind, sunrise, sunset, country, hour }) {
     <ul>
       <li>
         <h3>
-          Forecast for city: <span>{city}</span>
+          Weather for City <span>{city}</span>
         </h3>
       </li>
       <li>
-        Clouds: <span> {clouds} %</span>
+        Clouds <span> {clouds} %</span>
       </li>
       <li>
-        Temperature: <span>{temp} *C</span>
+        Temperature <span>{temp} *C</span>
       </li>
       <li>
-        Wind: <span>{wind} km/h</span>
+        Wind <span>{wind} km/h</span>
       </li>
       <li>
-        Sunrise: <span>{sunrise}</span>
+        Sunrise <span>{sunrise}</span>
       </li>
       <li>
-        Sunset: <span>{sunset}</span>
+        Sunset <span>{sunset}</span>
       </li>
       <li>
         <a
@@ -29,7 +29,7 @@ function Results({ city, clouds, temp, wind, sunrise, sunset, country, hour }) {
           target="_blank"
           rel="noreferrer"
         >
-          Country:
+          Country
         </a>
         <span> {country}</span>
       </li>

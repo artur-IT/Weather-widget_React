@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, createElement } from "react";
 import ReactDOM from "react-dom/client";
 import Results from "./Results";
 
@@ -15,9 +15,16 @@ class Weather extends Component {
     country: 0,
   };
 
+  inputHandler = () => {
+    const error = document.createElement("p");
+    error.textContent = "Bad city name, try again!";
+    document.getElementById("root").appendChild(error);
+    setTimeout(() => (error.textContent = ""), 3000);
+  };
+
   // INITIALIZE getWeather() function and CLEAR INPUT FIELD
   handleButton = () => {
-    this.state.city ? this.getWeather() : alert("enter the city");
+    this.state.city ? this.getWeather() : this.inputHandler();
     document.getElementById("search_city").value = "";
   };
 
@@ -35,7 +42,7 @@ class Weather extends Component {
       .then((response) => response.json())
       .then((results) => {
         if (results.cod === "404") {
-          results.cod = "404" && alert("bad city name!");
+          results.cod = "404" && this.inputHandler();
           this.setState({ active: false });
         } else {
           const weatherTime = new Date(results.dt * 1000).toLocaleString();
