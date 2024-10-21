@@ -4,7 +4,13 @@
   padding: 0;
 }
 
-body {
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
   font-size: 1.4rem;
   background-color: #000;
   background-image: url("2.jpg");
@@ -13,14 +19,30 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
-#root {
-  margin: 6% 28% 0 37%;
-  text-align: center;
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding-top: 150px;
+  width: 600px;
+  height: auto;
+}
+
+.container_search {
+  display: flex;
+  width: auto;
+  justify-content: center;
 }
 
 h2 {
-  margin: 10px 0;
+  text-align: center;
+  margin-bottom: 10px;
   color: #fff;
+}
+
+input {
+  width: 280px;
 }
 
 input,
@@ -29,12 +51,18 @@ button {
   font-size: 1.2rem;
   padding: 7px 10px;
   background-color: #fff;
-  border: 1px solid black;
+  border: 2px solid #000;
+  border-radius: 10px;
+}
+
+button {
+  padding: 10px 15px;
+  background-color: #87cb91;
 }
 
 button:hover {
   cursor: pointer;
-  background-color: black;
+  background-color: #000;
   color: white;
   transition: 0.5s;
 }
@@ -47,13 +75,13 @@ div {
 
 ul {
   width: 358px;
-  margin: 5px auto;
-  padding: 15px 20px;
+  padding: 25px 30px;
   list-style: none;
   border-radius: 0px;
   text-align: left;
   background-color: #000000;
-  opacity: 0.7;
+  opacity: 0.8;
+  border-radius: 25px;
 }
 li {
   margin: 3px 0;
@@ -69,15 +97,16 @@ sup {
   font-size: 1.1rem;
   color: #999;
 }
+.error {
+  color: red;
+  font-weight: bold;
+  background-color: #fff;
+}
 
 @media (max-width: 500px) and (orientation: portrait) {
   #root {
-    width: 95vw;
-    height: 89vh;
-    margin: 50px auto;
-  }
-
-  body {
+    width: 100vw;
+    height: 100vh;
     font-size: 1.1rem;
     background-color: #000;
     background-image: url("2.jpg");
@@ -85,11 +114,27 @@ sup {
     background-position: center;
   }
 
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 360px;
+    margin: 0 auto;
+  }
+
+  .container_search {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+
   input,
   button {
-    margin: 20px 5px;
+    display: flex;
+    margin: 10px;
     font-size: 1rem;
-    padding: 5px 10px;
+    padding: 10px 15px;
   }
 
   ul {
@@ -99,18 +144,43 @@ sup {
 
 @media (max-height: 500px) and (orientation: landscape) {
   #root {
-    margin: 4% 28% 0 34%;
+    width: 100vw;
+    height: 100vh;
+    font-size: 1.1rem;
+    display: flex;
+    justify-content: center;
   }
-  body {
-    font-size: 1rem;
+
+  h2 {
+    margin: 0;
   }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    align-self: center;
+    padding: 0;
+  }
+
+  .container_search {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+  }
+
+  input {
+    width: 210px;
+  }
+
   input,
   button {
     margin: 10px 5px;
-    font-size: 1.1rem;
-    padding: 5px 10px;
+    font-size: 1rem;
   }
+
   ul {
     width: 300px;
+    padding: 20px;
   }
 }

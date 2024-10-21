@@ -17,9 +17,8 @@ class Weather extends Component {
 
   // INPUT FIELD - empty or wrong city handler
   inputHandler = () => {
-    const error = document.createElement("p");
-    error.textContent = "Bad city name, try again!";
-    root.appendChild(error);
+    const error = document.querySelector("span");
+    error.textContent = " Bad city name, try again! ";
     setTimeout(() => (error.textContent = ""), 3000);
   };
 
@@ -68,16 +67,20 @@ class Weather extends Component {
   render() {
     const { hour, city, clouds, temp, wind, sunrise, sunset, country } = this.state;
     return (
-      <>
+      <div className="container">
         <h2>
           Simple Weather <sup>[React]</sup>
         </h2>
-        <input type="text" placeholder="enter the city" id="search_city" onChange={this.getCity} />
-        <button onClick={this.handleButton}>Search</button>
+        <div className="container_search">
+          <input type="text" placeholder="enter city" id="search_city" onChange={this.getCity} />
+          <button onClick={this.handleButton}>Search</button>
+        </div>
+
+        <span className="error"></span>
         {this.state.active === true ? (
           <Results hour={hour} city={city} clouds={clouds} temp={temp} wind={wind} sunrise={sunrise} sunset={sunset} country={country} />
         ) : null}
-      </>
+      </div>
     );
   }
 }
